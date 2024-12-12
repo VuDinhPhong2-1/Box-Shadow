@@ -1,5 +1,22 @@
-.container{
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+@media screen and (max-width: 999px) {
+  .container {
     display: flex;
     width: 100%;
     justify-content: center;
+    flex-direction: column;
+    padding: 32px;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .container {
+    padding: 0;
+  }
 }

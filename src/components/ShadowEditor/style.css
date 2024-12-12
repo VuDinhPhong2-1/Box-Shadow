@@ -201,3 +201,10 @@
     }
   }
 }
+@media screen and (max-width: 999px) {
+  .container {
+    min-width: 100%;
+    margin: 0;
+
+  }
+}
