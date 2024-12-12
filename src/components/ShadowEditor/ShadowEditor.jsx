@@ -161,52 +161,101 @@ const ShadowEditor = () => {
 
         <div className={style.formLayout_item}>
           <label>Shift down</label>
-          <input
-            type="range"
-            min="-100"
-            max="100"
-            value={currentShadow.shiftDown}
-            onInput={(e) =>
-              handleInputChange("shiftDown", Number(e.target.value), e)
-            }
-          />
+          <div className={style.containerSlider}>
+            <input
+              type="range"
+              min="-100"
+              max="100"
+              step="1"
+              value={currentShadow.shiftDown}
+              onInput={(e) =>
+                handleInputChange("shiftDown", Number(e.target.value), e)
+              }
+              className={style.rangeSlider}
+            />
+            <span
+              className={style.sliderValue}
+              style={{
+                left: `calc(${((currentShadow.shiftDown + 100) / 200) * 100}%)`,
+              }}
+            >
+              {currentShadow.shiftDown}
+            </span>
+          </div>
         </div>
+
         <div className={style.formLayout_item}>
           <label>Spread</label>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={currentShadow.spread}
-            onInput={(e) =>
-              handleInputChange("spread", Number(e.target.value), e)
-            }
-          />
+          <div className={style.containerSlider}>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={currentShadow.spread}
+              onInput={(e) =>
+                handleInputChange("spread", Number(e.target.value), e)
+              }
+              className={style.rangeSlider}
+            />
+            <span
+              className={style.sliderValue}
+              style={{
+                left: `calc(${(currentShadow.spread / 100) * 100}%)`,
+              }}
+            >
+              {currentShadow.spread}
+            </span>
+          </div>
         </div>
+
         <div className={style.formLayout_item}>
           <label>Blur</label>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={currentShadow.blur}
-            onInput={(e) =>
-              handleInputChange("blur", Number(e.target.value), e)
-            }
-          />
+          <div className={style.containerSlider}>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={currentShadow.blur}
+              onInput={(e) =>
+                handleInputChange("blur", Number(e.target.value), e)
+              }
+              className={style.rangeSlider}
+            />
+            <span
+              className={style.sliderValue}
+              style={{
+                left: `calc(${(currentShadow.blur / 100) * 100}%)`,
+              }}
+            >
+              {currentShadow.blur}
+            </span>
+          </div>
         </div>
+
         <div className={style.formLayout_item}>
           <label>Opacity</label>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={currentShadow.opacity}
-            onInput={(e) =>
-              handleInputChange("opacity", Number(e.target.value), e)
-            }
-          />
+          <div className={style.containerSlider}>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={currentShadow.opacity}
+              onInput={(e) =>
+                handleInputChange("opacity", Number(e.target.value), e)
+              }
+              className={style.rangeSlider}
+            />
+            <span
+              className={style.sliderValue}
+              style={{
+                left: `calc(${(currentShadow.opacity / 100) * 100}%)`,
+              }}
+            >
+              {currentShadow.opacity}
+            </span>
+          </div>
         </div>
+
         <div className={style.formLayout_item_2}>
           <label>
             <input
