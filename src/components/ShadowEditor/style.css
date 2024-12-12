@@ -1,0 +1,203 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  max-width: 457px;
+  width: 100%;
+  margin: 16px 0px 0px 20px;
+  height: fit-content;
+  box-shadow: var(
+    --p-card-shadow,
+    0 0 0 1px rgba(63, 63, 68, 0.05),
+    0 1px 3px 0 rgba(63, 63, 68, 0.15)
+  );
+
+  & h2 {
+    padding: 20px 20px 0 20px;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI,
+      Roboto, Helvetica Neue, sans-serif;
+  }
+
+  & .formLayout_item {
+    margin: 16px 0px 0px 20px;
+
+    & .containerSlider {
+      position: relative;
+      width: 100%;
+
+      & .rangeSlider:hover + .sliderValue {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      & .sliderValue {
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+        display: none;
+        width: 32px;
+        height: 32px;
+        background-color: #212b36;
+        border-radius: 3px;
+        color: #fff;
+        font-size: 0.8rem;
+        z-index: 20;
+      }
+    }
+    & label {
+      font-size: 14px;
+    }
+    & input {
+      -webkit-appearance: none;
+      height: 4px;
+      width: 100%;
+      border-radius: 5px;
+      background: #c4cdd5;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: 0.2s;
+      transition: opacity 0.2s;
+      cursor: pointer;
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid #d2d2d2;
+        background: #fdfdfd;
+        cursor: pointer;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      }
+      &::-webkit-slider-thumb:hover {
+        & .number {
+          display: flex;
+        }
+      }
+      &::-moz-range-progress {
+        background-color: #5c6ac4;
+      }
+      /* &::-ms-track {
+        cursor: pointer;
+        width: 100%;
+        height: 0.4rem;
+        background-image: linear-gradient(90deg, var(--gradient-colors));
+        border: none;
+        border-radius: 0.4rem;
+      } */
+    }
+  }
+  & .formLayout_item_2 {
+    margin: 16px 0px 0px 20px;
+    display: inline-flex;
+    justify-content: flex-start;
+
+    & label {
+      display: flex;
+      font-size: 14px;
+      gap: 10px;
+    }
+  }
+  & .sliderControls {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .containerAddLayer {
+    padding: 20px;
+    border-top: 1px solid #dfe3e8;
+    height: fit-content;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+
+    & button {
+      background-color: #f7f8fa;
+      padding: 7px 16px;
+      border-radius: 3px;
+      height: 36px;
+      width: 96px;
+      border: 1px solid #c4cdd5;
+      cursor: pointer;
+
+      & span {
+        font-size: 13px;
+        font-weight: 400;
+        display: flex;
+      }
+    }
+
+    & .layerWrap {
+      width: 100%;
+      & .layerItem {
+        position: relative;
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        padding: 10px 10px 10px 30px;
+        background-color: #fff;
+        align-items: center;
+        cursor: move;
+        justify-content: space-between;
+        color: black;
+
+        & .left {
+          & svg {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+          }
+        }
+        & .left,
+        .right {
+          display: flex;
+          align-items: center;
+
+          & span {
+            font-size: 14px;
+            color: black;
+          }
+
+          & svg {
+            display: flex;
+            width: 20px;
+            height: 20px;
+            justify-content: center;
+
+            & path {
+              fill: black;
+            }
+          }
+        }
+
+        &.selected {
+          background-color: #4f5e9a;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          & span {
+            color: #fff;
+          }
+          & .left,
+          .right {
+            & svg {
+              & path {
+                fill: #fff;
+              }
+            }
+          }
+        }
+
+        & span {
+          font-size: 14px;
+          color: black;
+        }
+      }
+    }
+  }
+}
