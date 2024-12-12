@@ -356,7 +356,7 @@ const Preview = () => {
               height: "200px",
               backgroundColor: `rgb(${backgroundPreviewSettings.backgroundBoxPreview.r}, ${backgroundPreviewSettings.backgroundBoxPreview.g}, ${backgroundPreviewSettings.backgroundBoxPreview.b})`,
               boxShadow: boxShadows,
-              transition: "box-shadow 0.1s ease-in-out",
+              transition: "box-shadow 0.3s ease",
             }}
           />
         </div>
